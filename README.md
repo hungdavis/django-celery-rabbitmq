@@ -92,13 +92,20 @@ python manage.py runserver
 celery -A myproject worker --loglevel=info
 ```
 
-### 7. Run Django
+### 7. Start Celery Beat
+
+```bash
+celery -A myproject beat --loglevel=info -S django
+```
+Note: -S means --schedule 
+
+### 8. Run Django
 
 ```bash
 cd myproject
 python manage.py runserver
 ```
-### 8. Test with user register 
+### 9. Test with user register 
 Open http://localhost:8000/register-user
 to test user form registration 
 
